@@ -1,6 +1,6 @@
 export const GERENCIAR_URL = Object.freeze({
   path: '/gerenciar',
-  livros: {
+  imoveis: {
     name: 'gerenciar.imoveis',
     path: '/imoveis',
   },

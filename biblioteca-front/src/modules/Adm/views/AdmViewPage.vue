@@ -20,6 +20,7 @@
 </template>
 
 <script>
+
 import { ADM_ERRORS } from '@/modules/Adm/adm.constans';
 // eslint-disable-next-line import/no-cycle
 import { goToAdmNotFound } from '@/modules/Adm/adm.routes';

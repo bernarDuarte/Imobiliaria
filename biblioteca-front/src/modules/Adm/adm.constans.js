@@ -1,20 +1,20 @@
 export const ADM_URL = Object.freeze({
-  path: '/administrador',
+  path: '/api/administrador',
   view: {
     name: 'adm.view',
-    path: '/administrador/ver/:id',
+    path: '/api/administrador/ver/:id',
   },
   edit: {
     name: 'adm.edit',
-    path: '/administrador/editar/:id',
+    path: '/api/administrador/editar/:id',
   },
   create: {
     name: 'adm.create',
-    path: '/administrador/criar',
+    path: '/api/administrador/criar',
   },
   notfound: {
     name: 'adm.notfound',
-    path: '/administrador/nao-encontrado',
+    path: '/api/administrador/nao-encontrado',
   },
 });
 

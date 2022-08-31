@@ -1,20 +1,20 @@
 export const TIPOIMOVEL_URL = Object.freeze({
-  path: '/tipoImovel',
+  path: '/api/tipoImovel',
   view: {
     name: 'tipoImovel.view',
-    path: '/TipoImovel/ver/:id',
+    path: '/api/TipoImovel/ver/:id',
   },
   edit: {
     name: 'tipoImovel.edit',
-    path: '/TipoImovel/editar/:id',
+    path: '/api/TipoImovel/editar/:id',
   },
   create: {
     name: 'tipoImovel.create',
-    path: '/TipoImovel/criar',
+    path: '/api/TipoImovel/criar',
   },
   notfound: {
     name: 'tipoImovel.notfound',
-    path: '/TipoImovel/nao-encontrado',
+    path: '/api/TipoImovel/nao-encontrado',
   },
 });
 

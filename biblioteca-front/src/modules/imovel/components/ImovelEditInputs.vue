@@ -29,15 +29,9 @@
           placeholder="Valor do imovel" />
       </div>
       <div class="form-field">
-        <biblioteca-textarea
-          v-model="imovelEditVm.imovel.TipoImovel"
-          label="TipoImovel*"
-          name="id"
-          type="int"
-          rules="required"
-          placeholder="Id do Tipo do Imovel" />
+        <biblioteca-tipo-imovel-select
+          v-model="imovelEditVm.imovel.id_tipoimovel" />
       </div>
-
       <div class="mt-4 mb-3 d--flex justify-content-end">
         <biblioteca-button
           class="btn btn-secondary"
@@ -61,9 +55,13 @@
 
 <script>
 import { goHistoryBack } from '@/router/route.service';
+import BibliotecaTipoImovelSelect from '@/modules/tipoImovel/components/TipoImovelSelect.vue';
 
 export default {
-  name: 'BibliotecaLivroEdit',
+  name: 'BibliotecaImovelEdit',
+  components: {
+    BibliotecaTipoImovelSelect,
+  },
   inject: ['imovelEditVm'],
   data() {
     return {

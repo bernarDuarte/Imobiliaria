@@ -2,7 +2,7 @@ import { GERENCIAR_URL } from '@/modules/gerenciar/gerenciar.constants';
 
 export default [
   {
-    ...GERENCIAR_URL.imovel,
+    ...GERENCIAR_URL.imoveis,
     component: () => import('@/modules/gerenciar/views/GerenciarImoveis.vue'),
   },
   {
@@ -17,7 +17,7 @@ export default [
 
 export function goToImovel($router) {
   $router.push({
-    name: GERENCIAR_URL.imovel.name,
+    name: GERENCIAR_URL.imoveis.name,
   });
 }
 

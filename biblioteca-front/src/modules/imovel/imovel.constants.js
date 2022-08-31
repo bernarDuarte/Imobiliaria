@@ -1,20 +1,20 @@
 export const IMOVEIS_URL = Object.freeze({
-  path: '/imoveis',
+  path: '/api/imoveis',
   view: {
     name: 'imovel.view',
-    path: '/imoveis/:id',
+    path: '/api/imoveis/:id',
   },
   edit: {
     name: 'imovel.edit',
-    path: '/imoveis/:id',
+    path: '/api/imoveis/:id',
   },
   create: {
     name: 'imovel.create',
-    path: '/imoveis',
+    path: '/api/imoveis',
   },
   notfound: {
     name: 'imovel.notfound',
-    path: '/imoveis/nao-encontrado',
+    path: '/api/imoveis/nao-encontrado',
   },
 });
 

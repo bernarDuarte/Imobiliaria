@@ -15,7 +15,7 @@
           v-for="tipoImovel in tipoImoveis"
           :key="tipoImovel.id"
           :value="tipoImovel.id">
-          <p>{{ tipoImovel.nome }}</p>
+          {{ tipoImovel.nome }}
         </option>
       </biblioteca-select>
     </div>

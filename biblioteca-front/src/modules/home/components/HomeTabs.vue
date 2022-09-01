@@ -1,69 +1,69 @@
 <template>
   <el-tabs v-model="tabActive" @tab-click="fetch">
-    <el-tab-pane label="Últimos Empréstimos" name="emprestimos">
-      <div v-if="emprestimoList.length">
+    <el-tab-pane label="Últimos Tipo De Imoveis" name="tipoImovels">
+      <div v-if="tipoImovelList.length">
         <div
-          v-for="emprestimo in emprestimoList"
-          :key="emprestimo.id"
+          v-for="tipoImovel in tipoImovelList"
+          :key="tipoImovel.id"
           class="mb--xl">
-          <biblioteca-emprestimo-card :emprestimo="emprestimo" />
+          <biblioteca-tipo-imovel-card :tipo-imovel="tipoImovel" />
         </div>
       </div>
       <div v-else>
-        <biblioteca-p class="opacity--50 my--md">( Sem Empréstimos )</biblioteca-p>
+        <biblioteca-p class="opacity--50 my--md">( Sem Tipos De Imoveis )</biblioteca-p>
       </div>
     </el-tab-pane>
-    <el-tab-pane label="Últimos livros" name="livros">
-      <div v-if="livroList.length">
+    <el-tab-pane label="Últimos Imoveis" name="imoveis">
+      <div v-if="imovelList.length">
         <div
-          v-for="livro in livroList"
-          :key="livro.id"
+          v-for="imovel in imovelList"
+          :key="imovel.id"
           class="mb--xl">
-          <biblioteca-livro-card :livro="livro" />
+          <biblioteca-imovel-card :imovel="imovel" />
         </div>
       </div>
       <div v-else>
-        <biblioteca-p class="opacity--50 my--md">( Sem livros )</biblioteca-p>
+        <biblioteca-p class="opacity--50 my--md">( Sem imoveis )</biblioteca-p>
       </div>
     </el-tab-pane>
-    <el-tab-pane label="Últimos usuários" name="usuarios">
-      <div v-if="usuarioList.length">
+    <el-tab-pane label="Últimos Administradores" name="adms">
+      <div v-if="admList.length">
         <div
-          v-for="usuario in usuarioList"
-          :key="usuario.id"
+          v-for="adm in admList"
+          :key="adm.id"
           class="mb--xl">
-          <biblioteca-usuario-card :usuario="usuario" />
+          <biblioteca-adm-card :adm="adm" />
         </div>
       </div>
       <div v-else>
-        <biblioteca-p class="opacity--50 my--md">( Sem usuários )</biblioteca-p>
+        <biblioteca-p class="opacity--50 my--md">( Sem Administradores )</biblioteca-p>
       </div>
     </el-tab-pane>
   </el-tabs>
 </template>
 
 <script>
-import { fetchLivros } from '@/modules/livro/livro.service';
-import { fetchUsuarios } from '@/modules/usuario/usuario.service';
-import { fetchEmprestimos } from '@/modules/emprestimo/emprestimo.service';
+import { fetchImoveis } from '@/modules/imovel/imovel.service';
+import { fetchAdm } from '@/modules/Adm/adm.service';
+import { fetchTipoImovel } from '@/modules/tipoImovel/tipoImovel.service';
 
-import BibliotecaLivroCard from '@/modules/livro/components/LivroCard.vue';
-import BibliotecaUsuarioCard from '@/modules/usuario/components/UsuarioCard.vue';
-import BibliotecaEmprestimoCard from '@/modules/emprestimo/components/EmprestimoCard.vue';
+import BibliotecaImovelCard from '@/modules/imovel/components/ImovelCard.vue';
+import BibliotecaAdmCard from '@/modules/Adm/components/AdmCard.vue';
+import BibliotecaTipoImovelCard from '@/modules/tipoImovel/components/TipoImovelCard.vue';
 
 export default {
   name: 'BibliotecaHomeTabs',
   components: {
-    BibliotecaLivroCard,
-    BibliotecaUsuarioCard,
-    BibliotecaEmprestimoCard,
+    BibliotecaImovelCard,
+    BibliotecaAdmCard,
+    BibliotecaTipoImovelCard,
   },
   data() {
     return {
-      tabActive: 'emprestimos',
-      livroList: [],
-      usuarioList: [],
-      emprestimoList: [],
+      tabActive: 'tipoImovels',
+      imovelList: [],
+      admList: [],
+      tipoImovelList: [],
     };
   },
   mounted() {
@@ -71,39 +71,39 @@ export default {
   },
   methods: {
     fetch() {
-      if (this.tabActive === 'emprestimos') {
-        this.fetchEmprestimos();
-      } else if (this.tabActive === 'livros') {
-        this.fetchLivros();
-      } else if (this.tabActive === 'usuarios') {
-        this.fetchUsuarios();
+      if (this.tabActive === 'tipoImovels') {
+        this.fetchTipoImovel();
+      } else if (this.tabActive === 'imoveis') {
+        this.fetchImoveis();
+      } else if (this.tabActive === 'adms') {
+        this.fetchAdm();
       }
     },
-    fetchLivros() {
-      fetchLivros()
+    fetchImoveis() {
+      fetchImoveis()
         .then(data => {
-          this.livroList = data.data;
+          this.imovelList = data.data;
         })
         .catch(() => {
-          this.livroList = [];
+          this.imovelList = [];
         });
     },
-    fetchUsuarios() {
-      fetchUsuarios()
+    fetchAdm() {
+      fetchAdm()
         .then(data => {
-          this.usuarioList = data.data;
+          this.admList = data.data;
         })
         .catch(() => {
-          this.usuarioList = [];
+          this.admList = [];
         });
     },
-    fetchEmprestimos() {
-      fetchEmprestimos()
+    fetchTipoImovel() {
+      fetchTipoImovel()
         .then(data => {
-          this.emprestimoList = data.data;
+          this.tipoImovelList = data.data;
         })
         .catch(() => {
-          this.emprestimoList = [];
+          this.tipoImovelList = [];
         });
     },
   },

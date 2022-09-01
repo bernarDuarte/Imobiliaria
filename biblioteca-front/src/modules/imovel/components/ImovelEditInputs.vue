@@ -30,7 +30,7 @@
       </div>
       <div class="form-field">
         <biblioteca-tipo-imovel-select
-          v-model="imovelEditVm.imovel.id_tipoimovel" />
+          v-bind=" imovelEditVm.imovel.tipoImovel = value " />
       </div>
       <div class="mt-4 mb-3 d--flex justify-content-end">
         <biblioteca-button
@@ -73,5 +73,6 @@ export default {
       this.$emit('save');
     },
   },
+
 };
 </script>

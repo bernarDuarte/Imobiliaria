@@ -6,7 +6,7 @@
       <biblioteca-icon
         class="mt-2"
         size="xl"
-        icon="book" />
+        icon="house" />
     </biblioteca-col>
     <biblioteca-col
       :sm="20"

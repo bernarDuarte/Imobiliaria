@@ -15,6 +15,20 @@
           </biblioteca-p>
         </biblioteca-col>
       </biblioteca-row>
+      <biblioteca-row class="mt-1">
+        <biblioteca-col>
+          <biblioteca-p class="biblioteca-u-text--medium">
+            {{ imovel.valor }}
+          </biblioteca-p>
+        </biblioteca-col>
+      </biblioteca-row>
+      <biblioteca-row class="mt-1">
+        <biblioteca-col>
+          <biblioteca-p class="biblioteca-u-text--medium">
+            {{ imovel.tipoImovel }}
+          </biblioteca-p>
+        </biblioteca-col>
+      </biblioteca-row>
     </template>
   </biblioteca-single-content-layout>
 </template>

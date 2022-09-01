@@ -15,7 +15,6 @@ import BibliotecaInvisible from '@/components/invisible/Invisible.vue';
 import BibliotecaImage from '@/components/image/Image.vue';
 import BibliotecaButton from '@/components/button/Button.vue';
 import BibliotecaEmpty from '@/components/empty/Empty.vue';
-import BibliotecaLivroLink from '@/modules/livro/components/LivroLink.vue';
 
 // Containers
 import BibliotecaRow from '@/components/container/Row.vue';
@@ -44,7 +43,6 @@ const components = {
   BibliotecaImage,
   BibliotecaButton,
   BibliotecaEmpty,
-  BibliotecaLivroLink,
 
   // Containers
   BibliotecaRow,
